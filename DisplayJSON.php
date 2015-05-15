@@ -44,12 +44,11 @@ $conn->close();
 include_once "./framework/JSONCache.php";
 include_once "./framework/CalendarEvents.php";
 
-foreach ($aarskort as $kort) {
-    if (JSONCache::CacheExists($_GET['aarskort']) && false) {
-        $data = JSONCache::GetFromCache($_GET['aarskort']);
-    } else {
-        $data = JSONCache::GenerateCache($_GET['aarskort']);
-    }
+//TODO: This should do a fetch for the individual aarskort and not for it all.
+if (JSONCache::CacheExists($_GET['aarskort']) && false) {
+    $data = JSONCache::GetFromCache($_GET['aarskort']);
+} else {
+    $data = JSONCache::GenerateCache($_GET['aarskort']);
 }
 
 echo json_encode($data);
