@@ -1,0 +1,152 @@
+body
+{
+    font-family: "Advent Pro", Helvetica, Arial, Tahoma, sans-serif;
+    background: url("./img/symphony.png");
+}
+
+table{
+    width: 100%;
+    table-layout: fixed;
+    min-width: 770px;
+}
+
+h2{
+    text-shadow: 2px 2px 5px rgb(223, 223, 223);
+}
+
+.content-wrapper{
+    position: absolute;
+    top: 50%;
+    margin-top: -175px;/* half of #content height + padding*/
+    left: 0;
+    width: 100%;
+}
+.content{
+    height: 350px;
+    width: 400px;
+    margin: auto auto;
+    /*background-color:rgba(226, 226, 226, 1);
+    border: solid 5px rgb(30, 205, 151);*/
+    padding: 20px;
+    border-radius: 5px;
+    border-color: #B8B8B8;
+}
+
+.content>*{
+    display: inline-block;
+    text-align: center;
+    width: 360px;
+    margin: 0;
+}
+
+body>strong{
+    color: whitesmoke;
+    font-weight: normal;
+}
+
+.time-column{
+    width: 60px;
+}
+
+form label[for=allweeksCheck]{
+    line-height: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -10px;
+}
+
+.box {
+    position:relative;
+    background-color:rgb(255,230,230);
+    text-align:center;
+    height:100%;
+    width: 100%;
+    float: left;
+
+    /* Non standard for webkit */
+    word-break: break-word;
+
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+
+    word-wrap: break-word;
+}
+
+.half {
+    width: 50%;
+}
+
+.third {
+    width: 33%;
+}
+
+.fourth {
+    width: 25%;
+}
+
+.boxColor0 {
+    background-color: darkseagreen;
+}
+
+.boxColor1 {
+    background-color: bisque;
+}
+
+.boxColor2 {
+    background-color: darkgray;
+}
+
+.boxColor3 {
+    background-color: lightblue;
+}
+
+.boxColor4 {
+    background-color: darkkhaki;
+}
+
+.boxColor5 {
+    background-color: cadetblue;
+}
+
+.boxColor6 {
+    background-color: coral;
+}
+
+.boxColor6 {
+    background-color: darkgoldenrod;
+}
+
+.boxColor7 {
+    background-color: rgb(234, 59, 59);
+}
+
+.localization-box {
+    float: right;
+    width: 18px;
+    height: 17px;
+    margin-bottom: -17px;
+    z-index: 40;
+    position: relative;
+}
+
+.disclaimer-box {
+    float: left;
+    font-size: 10pt;
+}
+
+.changelog-container {
+    float: left;
+    margin-left: 10px;
+    font-size: 10pt;
+}
+
+.disclaimer-box a, .changelog-container a, .localization-box a{
+    color: rgb(22, 174, 127);
+}
+
+.disclaimer-box a:hover, .changelog-container a:hover, .localization-box a:hover{
+    color: rgb(20, 140, 100);
+}

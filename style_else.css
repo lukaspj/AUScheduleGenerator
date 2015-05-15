@@ -1,0 +1,14 @@
+@import url('./style.css');
+
+th
+{
+    background: #FF00D5;
+}
+
+table{
+    background-color: rgb(255, 171, 254);
+}
+
+td.time-column{
+    background-color: #FF00D5;
+}
