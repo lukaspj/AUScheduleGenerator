@@ -71,7 +71,6 @@ class ScienceEventsGrabber {
 
     public static function grabEvents($aarskort)
     {
-        echo "grabbing science";
         $htmlScheme = ScienceEventsGrabber::downloadScienceScheme($aarskort);
         $html = str_get_html($htmlScheme);
         $schemeHeader = $html->find('h2',0);
