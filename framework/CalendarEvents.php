@@ -118,6 +118,13 @@ class CalendarEvents {
         return false;
     }
 
+    public function compareEventTo($other) {
+        if($this->getSummary() == $other->getSummary()
+        and $this->getLocation() == $other->getLocation())
+            return true;
+        return false;
+    }
+
     public function mergeWith($other) {
         if($other->getName() == $this->getName())
             return;

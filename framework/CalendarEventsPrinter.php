@@ -145,7 +145,7 @@ class CalendarEventsPrinter
                         if (sizeof($a[$i][$j]) != sizeof($b[$i][$j]))
                             return false;
                         for ($k = 0; $k < sizeof($a[$i][$j]); $k++)
-                            if ($a[$i][$j][$k]->getSummary() != $b[$i][$j][$k]->getSummary())
+                            if (!$a[$i][$j][$k]->compareEventTo($b[$i][$j][$k]))
                                 return false;
                     } else
                         return false;

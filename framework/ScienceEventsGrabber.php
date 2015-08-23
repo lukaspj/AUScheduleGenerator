@@ -114,7 +114,7 @@ class ScienceEventsGrabber {
                                 , $location
                                 , $dow
                                 , (int)$weeks[0]
-                                , (int)$weeks[1]
+                                , (int)$weeks[1] == 0 ? $weeks[0] : $weeks[1]
                                 , $name);
                             $weeks = explode("-", $weekStrs[1]);
                             $retArr[] = new CalendarEvents(
@@ -125,7 +125,7 @@ class ScienceEventsGrabber {
                                 , $location
                                 , $dow
                                 , (int)$weeks[0]
-                                , (int)$weeks[1]
+                                , (int)$weeks[1] == 0 ? $weeks[0] : $weeks[1]
                                 , $name);
                         } else {
                             $weeks = explode("-", $weekStr);
@@ -137,7 +137,7 @@ class ScienceEventsGrabber {
                                 , $location
                                 , $dow
                                 , (int)$weeks[0]
-                                , (int)$weeks[1]
+                                , (int)$weeks[1] == 0 ? $weeks[0] : $weeks[1]
                                 , $name);
                         }
                     }
