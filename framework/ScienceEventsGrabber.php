@@ -49,13 +49,13 @@ class ScienceEventsGrabber {
         // receive server response ...
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-        curl_setopt($ch, CURLOPT_URL,"http://services.science.au.dk/apps/skema/VaelgElevskema.asp?webnavn=skema&amp;sprog=da");
+        curl_setopt($ch, CURLOPT_URL,"http://timetable.scitech.au.dk/apps/skema/VaelgElevskema.asp?webnavn=skema");
         curl_exec ($ch);
 
         // Timeout in seconds
         curl_setopt($ch, CURLOPT_TIMEOUT, 10);
 
-        curl_setopt($ch, CURLOPT_URL,"http://services.science.au.dk/apps/skema/ElevSkema.asp");
+        curl_setopt($ch, CURLOPT_URL,"http://timetable.scitech.au.dk/apps/skema/ElevSkema.asp");
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS,
             http_build_query(array("aarskort"=>$aarskort,
