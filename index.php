@@ -110,7 +110,7 @@ if(isset($_GET['en']) && $_GET['en'] == "1")
         </p>
         <p>
             The Science and Technology schedule is retrieved from:
-            <a href="http://services.science.au.dk/apps/skema/VaelgElevskema.asp?webnavn=skema">http://services.science.au.dk/apps/skema/VaelgElevskema.asp?webnavn=skema</a><br />
+            <a href="http://timetable.scitech.au.dk/apps/skema/VaelgElevskema.asp?webnavn=skema">http://timetable.scitech.au.dk/apps/skema/VaelgElevskema.asp?webnavn=skema</a><br />
             The BSS and Arts schedule is retrieved from <a href="http://springschedule.au.dk/dk/">http://springschedule.au.dk/dk/</a> and
             <a href="http://autumnschedule.au.dk/dk/">http://autumnschedule.au.dk/dk/</a>.<br />
             <br />
@@ -123,6 +123,14 @@ if(isset($_GET['en']) && $_GET['en'] == "1")
 
     <div id="changeLogModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
         <h2 id="modalTitle">Changelog</h2>
+        <p class="lead">20-03-2016</p>
+        <ul>
+            <li>Now supports trailing slashes in URL's.</li>
+            <li>Updated SciTech URL for fetching.</li>
+            <li>JSON support.</li>
+            <li>Proper JSON routing.</li>
+            <li>Fixed a bug for courses that change location in different weeks.</li>
+        </ul>
         <p class="lead">15-04-2015</p>
         <ul>
             <li>Major redesign.</li>
