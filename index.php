@@ -123,6 +123,11 @@ if(isset($_GET['en']) && $_GET['en'] == "1")
 
     <div id="changeLogModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
         <h2 id="modalTitle">Changelog</h2>
+        <p class="lead">29-03-2015</p>
+        <ul>
+            <li>Fixed an issue with week-number to date conversion not being correct.</li>
+            <li>Added support for team-numbers on science.</li>
+        </ul>
         <p class="lead">20-03-2016</p>
         <ul>
             <li>Now supports trailing slashes in URL's.</li>
