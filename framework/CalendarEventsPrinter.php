@@ -59,8 +59,8 @@ class CalendarEventsPrinter
             $fridayString = "Friday";
         }
 
-        $dateFrom = date("d/m", strtotime("2015W" . ($weekMin + $weekFrom) . "1"));
-        $dateTo = date("d/m", strtotime("2015W" . ($weekMin + $weekTo) . "7"));
+        $dateFrom = date("d/m", strtotime(date("Y") . "W" . ($weekMin + $weekFrom) . "1"));
+        $dateTo = date("d/m", strtotime(date("Y") . "W" . ($weekMin + $weekTo) . "7"));
         $out = "    <div class='row'>
     <strong>$weekstring: " . ($weekMin + $weekFrom) . " - " . ($weekMin + $weekTo) . " ($dateFrom - $dateTo)</strong>";
 
