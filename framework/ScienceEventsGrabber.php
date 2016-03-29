@@ -93,6 +93,10 @@ class ScienceEventsGrabber {
                     $tables = $element->children();
                     foreach($tables as $table) {
 
+                        $teamStr = $table->children(0)->xmltext;
+                        $teamStr = preg_replace("/href=['\"](.*)['\"]/", "href=\"http://timetable.scitech.au.dk/apps/skema/$1\"", $teamStr);
+                        $teamStr = utf8_encode($teamStr);
+
                         $weekStr = $table->children(4)->plaintext;
                         $weekStr = substr($weekStr, 4);
                         $timeStr = explode(" - ", $table->children(2)->plaintext);
@@ -115,7 +119,9 @@ class ScienceEventsGrabber {
                                 , $dow
                                 , (int)$weeks[0]
                                 , (int)$weeks[1] == 0 ? $weeks[0] : $weeks[1]
-                                , $name);
+                                , $name
+                                , null
+                                , $teamStr);
                             $weeks = explode("-", $weekStrs[1]);
                             $retArr[] = new CalendarEvents(
                                 utf8_encode($header->innertext)
@@ -126,7 +132,9 @@ class ScienceEventsGrabber {
                                 , $dow
                                 , (int)$weeks[0]
                                 , (int)$weeks[1] == 0 ? $weeks[0] : $weeks[1]
-                                , $name);
+                                , $name
+                                , null
+                                , $teamStr);
                         } else {
                             $weeks = explode("-", $weekStr);
                             $retArr[] = new CalendarEvents(
@@ -138,7 +146,9 @@ class ScienceEventsGrabber {
                                 , $dow
                                 , (int)$weeks[0]
                                 , (int)$weeks[1] == 0 ? $weeks[0] : $weeks[1]
-                                , $name);
+                                , $name
+                                , null
+                                , $teamStr);
                         }
                     }
                 }

@@ -49,6 +49,7 @@ class CalendarEventsPrinter
         $wednesdayString = "Onsdag";
         $thursdayString = "Torsdag";
         $fridayString = "Fredag";
+        $teamString = "Hold";
 
         if ($en) {
             $weekstring = "Week";
@@ -57,6 +58,7 @@ class CalendarEventsPrinter
             $wednesdayString = "Wednesday";
             $thursdayString = "Thursday";
             $fridayString = "Friday";
+            $teamString = "Team";
         }
 
         $dateFrom = date("d/m", strtotime(date("Y") . "W" . ($weekMin + $weekFrom) . "1"));
@@ -115,6 +117,9 @@ class CalendarEventsPrinter
                         $out .= "<div class='box boxColor" . $eventMap[$event->getSummary()] . $classAppend . "'>";
                         $out .= "<strong>" . $event->getSummary() . "</strong><br />";
                         $out .= "<strong>" . $description . "</strong><br />";
+                        if($event->getTeam() != null) {
+                            $out .= "<em>$teamString " . $event->getTeam() . "</em><br />";
+                        }
                         $out .= "" . $event->getLocation() . "<br />";
                         if ($multiple)
                             $out .= "<i>" . implode(" + ", $event->getNames()) . "</i><br/>";

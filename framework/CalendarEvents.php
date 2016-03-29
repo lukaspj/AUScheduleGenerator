@@ -18,8 +18,9 @@ class CalendarEvents {
     private $mLocation;
     private $mName;
     private $mOtherNames;
+    private $mTeam;
 
-    public function __construct($summary, $from, $to, $desc, $location, $dow, $weekFrom, $weekTo, $name, $otherNames = array()){
+    public function __construct($summary, $from, $to, $desc, $location, $dow, $weekFrom, $weekTo, $name, $otherNames = array(), $team = null){
         $this->mSummary = $summary;
         $this->mFrom = $from;
         $this->mTo = $to;
@@ -30,6 +31,7 @@ class CalendarEvents {
         $this->mWeekTo = $weekTo;
         $this->mName = $name;
         $this->mOtherNames = $otherNames;
+        $this->mTeam = $team;
     }
 
     public static function FromArray($events)
@@ -47,7 +49,8 @@ class CalendarEvents {
                 $event->weekfrom,
                 $event->weekto,
                 $event->name,
-                $event->othernames
+                $event->othernames,
+                $event->team
             );
         }
         return $retArr;
@@ -102,6 +105,11 @@ class CalendarEvents {
 
     public function getWeekTo() {
         return $this->mWeekTo;
+    }
+
+    public function getTeam()
+    {
+        return $this->mTeam;
     }
 
     public function printEvent(){
@@ -161,7 +169,8 @@ class CalendarEvents {
             'description' => $this->mDescription,
             'location' => $this->mLocation,
             'name' => $this->mName,
-            'othernames' => $this->mOtherNames
+            'othernames' => $this->mOtherNames,
+            'team' => $this->mTeam
         );
     }
 }
